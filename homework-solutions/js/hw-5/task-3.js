@@ -6,16 +6,5 @@
 const word = 'hello';
 
 let vowelsAndConsonantsResult = '';
-let vowelCount = 0;
-let consonantCount = 0;
-for (let a of word) {
-  if (/[aeiouAEIOU]/.test(a)) {
-      vowelCount++;
-    } else {
-      consonantCount++;
-    }
- vowelsAndConsonantsResult = `${word} contains ${vowelCount} vowels and ${consonantCount} consonants`
-  }
- console.log(vowelsAndConsonantsResult)
 
- export { vowelsAndConsonantsResult };
+export { vowelsAndConsonantsResult };

@@ -17,19 +17,5 @@
  * 100 - делится на 5
  */
 let fizzBuzzResult = '';
-for (let a = 1; a <= 100; a++) {
-    fizzBuzzResult += a;
-    if (a % 3 === 0 && a % 5 === 0) {
-        fizzBuzzResult += ' - делится и на 3 и на 5';
-    } else if (a % 3 === 0) {
-        fizzBuzzResult += ' - делится на 3';
-    } else if (a % 5 === 0) {
-        fizzBuzzResult += ' - делится на 5';
-    }
-    if (a < 100) {
-        fizzBuzzResult += '\n';
-    }
-}
-console.log(fizzBuzzResult);
 
 export { fizzBuzzResult };
