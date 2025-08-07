@@ -65,4 +65,4 @@ console.log(replaceSpacesWithOneResult)
 // console.log(replaceSpacesWithOneResult);
  
  
-//export { evenNumbersResult, smilePatternResult, replaceSpacesWithOneResult };
+export { evenNumbersResult, smilePatternResult, replaceSpacesWithOneResult };
