@@ -1,5 +1,4 @@
 /*
-
 Работа с оператором IF:
 
   1. Создать переменную "minAge" и присвоить ей значение 18
@@ -12,5 +11,18 @@
     - Если "age" больше maxAge, вывести в консоль "Keep calm and look Culture channel".
     - Иначе выводите "Technical work".
   5. Проверить задание со следующими значениями в переменной age: 10, 17, 18, 19, 59, 60, 61
-
   */
+
+let minAge = 18, maxAge = 60;
+let age; //10, 17, 18, 19, 59, 60, 61
+if (typeof age !== "number"){
+  console.log("Incorrect data type");
+} else if (age < minAge){
+  console.log("You don't have access because your age is", age, ". It's less than", minAge);
+} else if (age >= minAge && age < maxAge){
+  console.log("Welcome!");
+} else if (age > maxAge){
+  console.log("Keep calm and watch the Culture channel");
+} else {
+  console.log("Technical work");
+}
