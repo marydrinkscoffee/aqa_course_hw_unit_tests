@@ -25,11 +25,12 @@ const allMyPizzasLow = allMyPizzas.map(a => a[0].toUpperCase() + a.slice(1).toLo
 for (const pizza of allMyPizzasLow){
 if (!competitorPizzasLow.includes(pizza)){
 resultUnique.push(pizza);
-} else if (resultUnique.length === 0) {
-resultNull = null;
-}
-}
-console.log(`My unique pizzas: ${resultUnique} \nPizzas we both offer: ${resultNull}`);
+} 
+}  
+if (resultUnique.length === 0) {
+  resultUnique = null;
+} else {resultNull = null};
+console.log(`My unique pizzas: ${resultUnique} \We offer the same pizzas: ${resultNull}`);
 
 
 
