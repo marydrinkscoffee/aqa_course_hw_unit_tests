@@ -4,8 +4,13 @@
 */
 
 function isPalindrom(word) {
-  // Ваш код
+if (typeof word !== 'string') {
+    return false;
+  }
+const compareWord = word.toLowerCase();
+return compareWord === compareWord.split('').reverse().join('');
 }
+console.log(isPalindrom("madam"));
 
 /*
  2. findLongestWords()
@@ -15,7 +20,26 @@ function isPalindrom(word) {
 */
 
 function findLongestWords(sentence) {
-  // Ваш код
+if (typeof sentence !== 'string') {
+    return [];
 }
-
+if (sentence === '') {
+  return [];
+}
+const sepWords = sentence.split(' ');
+let maxLength = 0;
+for (let i = 0; i < sepWords.length; i++) {
+  if (sepWords[i].length > maxLength) {
+    maxLength = sepWords[i].length;
+    }
+  }
+  const longestWords = [];
+  for (let i = 0; i < sepWords.length; i++) {
+    if (sepWords[i].length === maxLength) {
+      longestWords.push(sepWords[i]);
+    }
+  }
+  return longestWords;
+}
+console.log(findLongestWords('I am super engineer hahahaha'));
 export { isPalindrom, findLongestWords };
