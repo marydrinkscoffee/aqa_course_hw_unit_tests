@@ -19,7 +19,23 @@ const words = [
 ];
 
 function sortedByVowels(wordsArr) {
-  // Ваш код
+  return wordsArr.toSorted((a, b) => 
+    a.toLowerCase().split("").filter(char => "aeiou".includes(char)).length -
+    b.toLowerCase().split("").filter(char => "aeiou".includes(char)).length
+  );
 }
+
+// function countedVowels(word) {
+//   const vowels = ["a", "e", "i", "o", "u"];
+//   return word
+//   .toLowerCase()
+//   .split("")
+//   .filter(char => vowels.includes(char))
+//   .length;
+// }
+
+// function sortedByVowels(wordsArr) {
+// return wordsArr.toSorted((a, b) => countedVowels(a) - countedVowels(b));
+// }
 
 export { sortedByVowels };
