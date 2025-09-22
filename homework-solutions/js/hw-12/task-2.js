@@ -32,4 +32,4 @@ async function createTodo({ userId, title }) {
       console.log('The function has completed');
     }
   }
-  createTodo({ userId: 1, title: 'test' }).then(console.log);
+  createTodo({ userId: 1, title: 'test' }).then((result) => console.log(result));

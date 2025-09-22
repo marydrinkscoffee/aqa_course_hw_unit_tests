@@ -45,48 +45,47 @@ function delayTwoSeconds(fn) {
     console.log(number);
   });
   
-  //5
-  Promise.all([promiseNumber(1), promiseNumber(2), promiseNumber(3)]).then((numbers) => {
-    console.log(numbers);
-  });
-  
-  //6
-  Promise.allSettled([promiseNumber(1), promiseNumber(2), promiseNumber(3)]).then((numbers) => {
-    console.log(numbers);
-  });
-  
-  //7.1
-  async function promiseAll() {
-    try {
-      const numbers = await Promise.all([
-        promiseNumber(111),
-        promiseNumber(222),
-        promiseNumber(3333),
-        ]);
-        console.log(numbers);
-      } catch (error) {
-        console.error('Error:', error);
-      }
-    }
-    promiseAll();
-  
-   //7.2
-    async function promiseAllSettled() {
-      try {
-      const numbers = await Promise.allSettled([
-          promiseNumber(1), 
-          promiseNumber(2), 
-          promiseNumber(3),
-      ]);
-        console.log(numbers);
-      } catch(error) {
-        console.error('Error:', error);
-      }
-    }
-  promiseAllSettled();
+//5
+const testPromisesArray = [promiseNumber(1), promiseNumber(2), promiseNumber(3)];
 
+Promise.all(testPromisesArray).then((numbers) => {
+    numbers.forEach((result, index) => {
+        console.log(`Promise ${index + 1}:`, result);
+    });
+});
 
+//6
+Promise.allSettled(testPromisesArray).then((results) => {
+    results.forEach((result, index) => {
+        console.log(`Promise ${index + 1} - Status: ${result.status}, Value: ${result.value || result.reason}`);
+    });
+});
 
+//7.1
+async function promiseAll() { 
+    try { 
+        const numbers = await Promise.all(testPromisesArray); 
+        numbers.forEach((result, index) => {
+            console.log(`Promise ${index + 1}:`, result);
+        });
+    } catch (error) { 
+        console.error('Error:', error); 
+    } 
+}; 
+promiseAll();
+
+//7.2
+async function promiseAllSettled() { 
+    try { 
+        const results = await Promise.allSettled(testPromisesArray); 
+        results.forEach((result, index) => {
+            console.log(`Promise ${index + 1} - Status: ${result.status}, Value: ${result.value || result.reason}`);
+        });
+    } catch(error) { 
+        console.error('Error:', error); 
+    } 
+};
+promiseAllSettled();
 
 
 
